@@ -10,9 +10,9 @@ function isSupportedSeverity(level: string): level is Severity {
  * @returns Severity
  */
 export function severityFromString(level: SeverityLevel | string): Severity {
-  if (level === 'warn') return Severity.Warning;
+  if (level === 'warn') return 'warning' as Severity;
   if (isSupportedSeverity(level)) {
     return level;
   }
-  return Severity.Log;
+  return 'log' as Severity;
 }

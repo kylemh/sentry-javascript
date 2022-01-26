@@ -1,4 +1,8 @@
-import { Severity, SeverityLevel, SeverityLevels } from '@sentry/types';
+import { Severity, SeverityLevel } from '@sentry/types';
+
+// TODO This is a copy of what's in `@sentry/types`. Move it from there to a new `enums.ts` here in `@sentry/utils`, and
+// then move `@sentry/types` from dep to dev dep in `package.json`
+const SeverityLevels = ['fatal', 'error', 'warning', 'log', 'info', 'debug', 'critical'];
 
 function isSupportedSeverity(level: string): level is Severity {
   return SeverityLevels.indexOf(level as SeverityLevel) !== -1;

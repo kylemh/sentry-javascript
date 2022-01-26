@@ -1,4 +1,4 @@
-export {
+export type {
   Breadcrumb,
   BreadcrumbHint,
   Request,
@@ -15,6 +15,9 @@ export {
   Thread,
   User,
 } from '@sentry/types';
+
+export type { BrowserOptions } from './backend';
+export type { ReportDialogOptions } from './helpers';
 
 export {
   addGlobalEventProcessor,
@@ -39,9 +42,8 @@ export {
   withScope,
 } from '@sentry/core';
 
-export { BrowserOptions } from './backend';
 export { BrowserClient } from './client';
-export { injectReportDialog, ReportDialogOptions } from './helpers';
+export { injectReportDialog } from './helpers';
 export { eventFromException, eventFromMessage } from './eventbuilder';
 export { defaultIntegrations, forceLoad, init, lastEventId, onLoad, showReportDialog, flush, close, wrap } from './sdk';
 export { SDK_NAME } from './version';
